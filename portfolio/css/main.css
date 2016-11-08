@@ -95,13 +95,80 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-h1 {
+/* General Rules */
+body {
+  margin: 1em;
+}
+
+.center {
   text-align: center;
 }
 
+img {
+  border-color:  #000;
+  border-width:  .1em;
+  border-style:  solid;
+  border-radius: 5%;
+}
+
+/* Header */
+header {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .9);
+  padding-bottom: 0em;
+  width: 98%;
+  z-index: 1;
+  color: orange;
+}
+
+header nav ul li a {
+  color: #2196f3;
+}
+
+header nav ul {
+  margin: 0em;
+}
+
+header nav ul li {
+  list-style-type: none;
+  padding: 0em 1em .3em 0em;
+  float: left;
+}
+
+#navLogo img {
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 1.4em;
+  font-family: Lobster, Monospace;
+}
+
+/* Content */
+#content
+#about,
+#portfolio,
+#contact {
+  padding-top: 8.5em;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section#projects article {
+  padding: 0em 1em 0em 0em;
+}
+textarea, input {
+  border-color:  #EEE;
+  border-width:  .1em;
+  border-style:  solid;
+}
+
+/* Footer */
 footer {
-  padding: 40em 0em 2em 0em;
-  text-align: center
+  padding: 40em 0em 0em 0em;
 }
 
 /* ==========================================================================

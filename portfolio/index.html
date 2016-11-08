@@ -7,12 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
 
     <header>
-      <h1>Shapeous Portfolio</h1>
+      <div id="navLogo">
+        <a href="#">
+          <img src="https://avatars2.githubusercontent.com/u/2052546?v=3&s=100">
+        </a>
+        &nbsp;
+        <span class="title">Shapeous Portfolio</span>
+      </div>
       <nav>
         <ul>
           <li><a href="#about"    >About    </a></li>
@@ -22,43 +29,39 @@
       </nav>
     </header>
 
-    <section>
+    <section id="content">
       <article id="about">
         <h2>About
           <span style="margin-left:1em;"><small>
-            <a href="#">^ top</a>
           </small></span>
         </h2>
-        
-        <img src="http://lorempixel.com/640/480/business">
-        
-      </article><article id="portfolio">
+        <img class="thumb" src="http://lorempixel.com/280/280/business">
+      </article>
+
+      <article id="portfolio">
         <h2>Portfolio
           <span style="margin-left:1em;"><small>
-            <a href="#">^ top</a>
           </small></span>
         </h2>
-
-      <article>
-        <h3>Site One</h3>
-        <img src="http://lorempixel.com/640/480/people">
-      </article><article>
-        <h3>Site Two</h3>
-        <img src="http://lorempixel.com/640/480/sports">
-      </article><article>
-        <h3>Site Three</h3>
-        <img src="http://lorempixel.com/640/480/cats">
       </article>
-        
-      </article><article id="contact">
+      <section id="projects" class="flex">
+        <article>
+          <h3>Site One</h3>
+          <img class="thumb" src="http://lorempixel.com/280/280/people">
+        </article><article>
+          <h3>Site Two</h3>
+          <img class="thumb" src="http://lorempixel.com/280/280/sports">
+        </article><article>
+          <h3>Site Three</h3>
+          <img class="thumb" src="http://lorempixel.com/280/280/cats">
+        </article>
+      </section>
+      <article id="contact">
         <h2>Contact Me
           <span style="margin-left:1em;"><small>
-            <a href="#">^ top</a>
           </small></span>
         </h2>
-      
         <p>The best way to get in contact with me is through social media.</p>
-        
         <ul>
           <li>
             <a href="https://github.com/shapeous"           target="_blank">github</a>
@@ -70,10 +73,17 @@
             <a href="https://twitter.com/Shapeous"          target="_blank">twitter</a>
           </li>
         </ul>
+        <p>Alternatively please use the form below. Clicking send will open your default email client.</p>
+        <form id="dataForm">
+          <input type="text" name="subject" size="34" placeholder="Your Subject"><br>
+          <textarea name="body" placeholder="Dear Shapeous," rows="3" cols="34"></textarea><br>
+          <input type="button" value="Send" onclick="shapeous.submitEmail();">
+        </form>
+        <form id="emailForm" method="post"></form>
       </article>
     </section>
 
-    <footer>
+    <footer class="center">
       <small>All rights reserved shapeous.com<small>
     </footer>
 
