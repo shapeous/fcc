@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Seek and Destroy</title>
+    <meta name="description" content="Seek and Destroy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style></style>
+  </head>
+  <body>
+    <h1>Look at the console!</h1>
+    <hr>
+    <script>
+      "use strict";
+
+      function destroyer() {
+        var arr = Array.isArray(arguments[0])? arguments[0] : undefined;
+        //if (arr === undefined) console.error("The first argument must be an array");
+        var remove = Array.from(arguments).slice(1);
+        //if (remove.length === 0) console.error("You must provide at least one element to remove.");
+        var filteredArr = arr;
+/*
+        for (var i = 0; i < remove.length; i += 1) {
+          filteredArr = filteredArr.filter(function (elem) {
+            return elem !== remove[i];
+          });
+        }
+        return filteredArr;
+*/
+        remove.filter(function (item2Remove) {
+          filteredArr = filteredArr.filter(function (item) {
+            return item !== item2Remove;
+          });
+        });
+        return filteredArr;
+      }
+      console.log(destroyer([1,2,3,4,5],2,4));
+    </script>
+    </script>
+  </body>
+</html>
