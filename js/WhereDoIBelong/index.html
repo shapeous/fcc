@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Where Do I Belong</title>
+    <meta name="description" content="Where Do I Belong">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style></style>
+  </head>
+  <body>
+    <h1>Look at the console!</h1>
+    <hr>
+    <script>
+      "use strict";
+
+      // TODO: rewrite functionally
+      function getIndexToInsert(arr, num) {
+        arr.sort(function (a, b) {
+          return a - b;
+        });
+
+        var indexToInsert = 0;
+        for (var i = 0; i < arr.length; i += 1) {
+          console.log(arr[i],num);
+          
+          if (i < arr.length - 1) {
+            console.log("i < arr.length");
+            if (num > arr[i] && num <= arr[i + 1]) {
+              indexToInsert = i + 1;
+            }
+          } else {
+            console.log("i >= arr.length");
+            if (num > arr[i]) {
+              indexToInsert = i + 1;
+            }
+          }
+        }
+
+        return indexToInsert;
+      }
+
+      console.log(getIndexToInsert([2,5,10],15));
+    </script>
+  </body>
+</html>
