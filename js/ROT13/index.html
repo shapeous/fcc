@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ROT13 Cipher</title>
+    <meta name="description" content="ROT13 Cipher">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style></style>
+  </head>
+  <body>
+    <h1>Look at the console!</h1>
+    <hr>
+    <script>
+      "use strict";
+
+      function rot13(str) {
+        var ResultArr = [];
+
+        for (var i = 0; i < str.length; i += 1) {
+          var char = str.charCodeAt(i);
+          var thereAreMoreCharsToProcess = 13;
+          
+          // If char is a letter from A to Z shift circularly 13 characters otherwise skip
+          if (char >= 65 && char <= 90) {
+            while (thereAreMoreCharsToProcess) {
+              thereAreMoreCharsToProcess -= 1;
+              if (char === 65)
+                char = 90;
+              else
+                char -= 1;
+            }
+          } else {
+            thereAreMoreCharsToProcess = 0;
+          }
+          ResultArr[i] = String.fromCharCode(char);
+        }
+        return ResultArr.join("");
+      }
+
+      console.log(
+        rot13("SERR CVMMN!")
+      );
+    </script>
+  </body>
+</html>
