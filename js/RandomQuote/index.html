@@ -33,7 +33,7 @@
                   quoteElm = document.getElementById("quote");
               
               console.log(quoteObj);
-              quoteElm.innerHTML = '"' + quoteElm.quote + '" by ' + quoteElm.author + ''
+              quoteElm.innerHTML = '"' + quoteObj.quote + '" by ' + quoteObj.author + '';
             } else {
               console.warn("Failure: the API does not support that category");
             }
