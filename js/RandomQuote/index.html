@@ -11,6 +11,9 @@
   <body>
     <h1>Look at the console!</h1>
     <hr>
+    <section id="quote">
+      "The only bad workout is the one that doesn't happen" by Shapeous
+    </section>
     <script>
       "use strict";
 
@@ -26,9 +29,11 @@
 
             var data = JSON.parse(request.responseText);
             if (data.contents !== undefined) {
-              var quoteObj = data.contents.quotes[0];
+              var quoteObj = data.contents.quotes[0],
+                  quoteElm = document.getElementById("quote");
               
               console.log(quoteObj);
+              quoteElm.innerHTML = '"' + quoteElm.quote + '" by ' + quoteElm.author + ''
             } else {
               console.warn("Failure: the API does not support that category");
             }
