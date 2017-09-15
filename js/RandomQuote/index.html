@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Random Quote</title>
+    <meta name="description" content="Random Quote">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style></style>
+  </head>
+  <body>
+    <h1>Look at the console!</h1>
+    <hr>
+    <script>
+      "use strict";
+
+      function RandomQuote() {
+        console.log("Random Quote");
+
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://quotes.rest/qod.json?category=inspire", true);
+
+        request.onload = function () {
+          if (request.status >= 200 && request.status < 400) {
+            console.log("Connection Success!");
+
+            var data = JSON.parse(request.responseText);
+            if (data.contents !== undefined) {
+              var quoteObj = data.contents.quotes[0];
+              
+              console.log(quoteObj);
+            } else {
+              console.warn("Failure: the API does not support that category");
+            }
+          } else {
+            console.warn("Connection Failure!");
+          }
+        };
+
+        request.onerror = function () {
+          console.error("Error");
+        };
+
+        request.send();
+      }
+
+      RandomQuote();
+    </script>
+  </body>
+</html>
